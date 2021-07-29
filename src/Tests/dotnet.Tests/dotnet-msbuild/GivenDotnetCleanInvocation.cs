@@ -17,7 +17,7 @@ namespace Microsoft.DotNet.Cli.MSBuild.Tests
         private static readonly string WorkingDirectory = 
             TestPathUtilities.FormatAbsolutePath(nameof(GivenDotnetCleanInvocation));
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void ItAddsProjectToMsbuildInvocation()
         {
             var msbuildPath = "<msbuildpath>";
@@ -25,7 +25,7 @@ namespace Microsoft.DotNet.Cli.MSBuild.Tests
                 .GetArgumentsToMSBuild().Should().Be("-maxcpucount -verbosity:m -verbosity:normal <project> -target:Clean");
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData(new string[] { }, "")]
         [InlineData(new string[] { "-o", "<output>" }, "-property:OutputPath=<cwd><output>")]
         [InlineData(new string[] { "--output", "<output>" }, "-property:OutputPath=<cwd><output>")]

@@ -23,7 +23,7 @@ namespace Microsoft.NET.Build.Tests
         {
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData(false, false)]
         [InlineData(false, true)]
         [InlineData(true, false)]

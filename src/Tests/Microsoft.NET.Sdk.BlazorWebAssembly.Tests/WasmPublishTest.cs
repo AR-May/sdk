@@ -26,7 +26,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
     {
         public WasmPublishIntegrationTest(ITestOutputHelper log) : base(log) { }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_MinimalApp_Works()
         {
             // Arrange
@@ -58,7 +58,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             VerifyBootManifestHashes(testInstance, Path.Combine(publishDirectory.ToString(), "wwwroot"));
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_WithDefaultSettings_Works()
         {
             // Arrange
@@ -103,7 +103,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             VerifyTypeGranularTrimming(blazorPublishDirectory);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_WithScopedCss_Works()
         {
             // Arrange
@@ -145,7 +145,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
                 assetsManifestPath: "custom-service-worker-assets.js");
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_InRelease_Works()
         {
             // Arrange
@@ -181,7 +181,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             new FileInfo(Path.Combine(blazorPublishDirectory, "css", "app.css")).Should().Contain(".publish");
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_WithExistingWebConfig_Works()
         {
             // Arrange
@@ -201,7 +201,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             new FileInfo(Path.Combine(publishDirectory.ToString(), "..", "web.config")).Should().Contain(webConfigContents);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_WithNoBuild_Works()
         {
             // Arrange
@@ -245,7 +245,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             VerifyCompression(testInstance, blazorPublishDirectory);
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("different-path")]
         [InlineData("/different-path")]
         public void Publish_WithStaticWebBasePathWorks(string basePath)
@@ -307,7 +307,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
                 staticWebAssetsBasePath: "different-path");
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("different-path/")]
         [InlineData("/different-path/")]
         public void Publish_Hosted_WithStaticWebBasePathWorks(string basePath)
@@ -374,7 +374,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             uncompressedText.Should().Be(originalText);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_WithTrimmingdDisabled_Works()
         {
             // Arrange
@@ -445,7 +445,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             VerifyAssemblyHasTypes(loggingAssemblyPath, new[] { "Microsoft.Extensions.Logging.Abstractions.NullLogger" });
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_SatelliteAssemblies_AreCopiedToBuildOutput()
         {
             // Arrange
@@ -485,7 +485,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             VerifyBootManifestHashes(testInstance, blazorPublishDirectory);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_HostedApp_DefaultSettings_Works()
         {
             // Arrange
@@ -569,7 +569,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             VerifyTypeGranularTrimming(blazorPublishDirectory);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_HostedApp_ProducesBootJsonDataWithExpectedContent()
         {
             // Arrange
@@ -602,7 +602,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             bootJsonData.config.Should().Contain("appsettings.development.json");
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_HostedApp_WithSatelliteAssemblies()
         {
             // Arrange
@@ -650,7 +650,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             bootJsonData.Should().Contain("\"fr\\/Microsoft.CodeAnalysis.CSharp.resources.dll\"");
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         // Regression test for https://github.com/dotnet/aspnetcore/issues/18752
         public void Publish_HostedApp_WithoutTrimming_Works()
         {
@@ -751,7 +751,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
                 assetsManifestPath: "custom-service-worker-assets.js");
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_HostedApp_WithNoBuild_Works()
         {
             // Arrange
@@ -804,7 +804,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
                 assetsManifestPath: "custom-service-worker-assets.js");
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_HostedApp_VisualStudio()
         {
             // Simulates publishing the same way VS does by setting BuildProjectReferences=false.
@@ -888,7 +888,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
                 assetsManifestPath: "custom-service-worker-assets.js");
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_HostedAppWithScopedCss_VisualStudio()
         {
             // Simulates publishing the same way VS does by setting BuildProjectReferences=false.
@@ -980,7 +980,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
 
         // Regression test to verify satellite assemblies from the blazor app are copied to the published app's wwwroot output directory as
         // part of publishing in VS
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_HostedApp_VisualStudio_WithSatelliteAssemblies()
         {
             var testAppName = "BlazorWasmWithLibrary";
@@ -1029,7 +1029,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             VerifyBootManifestHashes(testInstance, blazorPublishDirectory);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_HostedApp_WithRidSpecifiedInCLI_Works()
         {
             // Arrange
@@ -1043,7 +1043,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             AssertRIDPublishOuput(publishCommand, testInstance, hosted: true);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_HostedApp_WithRid_Works()
         {
             // Arrange
@@ -1137,7 +1137,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
                 assetsManifestPath: "custom-service-worker-assets.js");
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_WithInvariantGlobalizationEnabled_DoesNotCopyGlobalizationData()
         {
             // Arrange
@@ -1175,7 +1175,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             new FileInfo(Path.Combine(publishOutputDirectory, "wwwroot", "_framework", "icudt_no_CJK.dat")).Should().NotExist();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_HostingMultipleBlazorWebApps_Works()
         {
             // Regression test for https://github.com/dotnet/aspnetcore/issues/29264

@@ -15,7 +15,7 @@ namespace Microsoft.NET.Sdk.Razor.Tool
 {
     public class ServerCommandTest
     {
-        [Fact]
+        [Fact(Skip="tmp")]
         public void WritePidFile_WorksAsExpected()
         {
             // Arrange
@@ -57,7 +57,7 @@ namespace Microsoft.NET.Sdk.Razor.Tool
             }
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GetPidFilePath_ReturnsCorrectDefaultPath()
         {
             // Arrange
@@ -79,7 +79,7 @@ namespace Microsoft.NET.Sdk.Razor.Tool
             Assert.Equal(expectedPath, directoryPath);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GetPidFilePath_UsesEnvironmentVariablePathIfSpecified()
         {
             // Arrange
@@ -93,7 +93,7 @@ namespace Microsoft.NET.Sdk.Razor.Tool
             Assert.Equal(expectedPath, directoryPath);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GetPidFilePath_NullEnvironmentVariableValue_ReturnsNull()
         {
             // Arrange

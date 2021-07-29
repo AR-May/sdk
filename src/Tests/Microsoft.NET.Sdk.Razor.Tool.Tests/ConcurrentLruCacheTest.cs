@@ -10,7 +10,7 @@ namespace Microsoft.NET.Sdk.Razor.Tool.Tests
 {
     public class ConcurrentLruCacheTest
     {
-        [Fact]
+        [Fact(Skip="tmp")]
         public void ConcurrentLruCache_HoldsCapacity()
         {
             // Arrange
@@ -24,7 +24,7 @@ namespace Microsoft.NET.Sdk.Razor.Tool.Tests
             Assert.Equal(expected, cache.TestingEnumerable);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Add_ThrowsIfKeyExists()
         {
             // Arrange
@@ -36,7 +36,7 @@ namespace Microsoft.NET.Sdk.Razor.Tool.Tests
             Assert.StartsWith("Key already exists", exception.Message);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GetOrAdd_AddsIfKeyDoesNotExist()
         {
             // Arrange
@@ -51,7 +51,7 @@ namespace Microsoft.NET.Sdk.Razor.Tool.Tests
             Assert.Equal(expected, cache.TestingEnumerable);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Remove_RemovesEntry()
         {
             // Arrange
@@ -67,7 +67,7 @@ namespace Microsoft.NET.Sdk.Razor.Tool.Tests
             Assert.Equal(expected, cache.TestingEnumerable);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Remove_KeyNotFound_ReturnsFalse()
         {
             // Arrange
@@ -81,7 +81,7 @@ namespace Microsoft.NET.Sdk.Razor.Tool.Tests
             Assert.False(result);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Add_NoRead_EvictsLastNode()
         {
             // Arrange
@@ -96,7 +96,7 @@ namespace Microsoft.NET.Sdk.Razor.Tool.Tests
             Assert.Equal(expected, cache.TestingEnumerable);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Add_ReadLastNode_EvictsSecondOldestNode()
         {
             // Arrange

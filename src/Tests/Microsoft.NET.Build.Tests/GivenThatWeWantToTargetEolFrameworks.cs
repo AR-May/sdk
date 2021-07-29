@@ -19,7 +19,7 @@ namespace Microsoft.NET.Build.Tests
         {
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("netcoreapp1.0")]
         [InlineData("netcoreapp3.0")]
         public void It_warns_that_framework_is_out_of_support(string targetFrameworks)
@@ -45,7 +45,7 @@ namespace Microsoft.NET.Build.Tests
                 .HaveStdOutContaining("NETSDK1138");
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_only_checks_for_netcoreapp_eol_frameworks()
         {
             var testProject = new TestProject()
@@ -68,7 +68,7 @@ namespace Microsoft.NET.Build.Tests
             Assert.All(lines, line => Assert.DoesNotContain("net472", line));
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_does_not_warn_when_deactivating_check()
         {
             var testProject = new TestProject()

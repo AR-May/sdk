@@ -20,7 +20,7 @@ namespace Microsoft.DotNet.Tests
         {
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void ICanRemoveSpecificImportsInProjectFile()
         {
             var testProject = new TestProject
@@ -44,7 +44,7 @@ End Module
                 .Should().Fail();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void ICanBuildVBApps()
         {
             var testInstance = _testAssetsManager.CopyTestAsset("VBTestApp")
@@ -55,7 +55,7 @@ End Module
                 .Should().Pass();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void ICanRunVBApps()
         {
             var testInstance = _testAssetsManager.CopyTestAsset("VBTestApp")
@@ -67,7 +67,7 @@ End Module
                 .Should().Pass();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void ICanPublicAndRunVBApps()
         {
             var testInstance = _testAssetsManager.CopyTestAsset("VBTestApp")

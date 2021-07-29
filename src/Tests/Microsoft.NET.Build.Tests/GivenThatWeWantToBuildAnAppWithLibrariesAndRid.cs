@@ -21,7 +21,7 @@ namespace Microsoft.NET.Build.Tests
         {
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_builds_a_RID_specific_runnable_output()
         {
             var runtimeIdentifier = RuntimeInformation.RuntimeIdentifier;
@@ -61,7 +61,7 @@ namespace Microsoft.NET.Build.Tests
                 .And.NotHaveStdErr();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_builds_a_framework_dependent_RID_specific_runnable_output()
         {
             var runtimeIdentifier = RuntimeInformation.RuntimeIdentifier;

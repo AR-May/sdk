@@ -20,7 +20,7 @@ namespace Microsoft.NET.Publish.Tests
         {
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("netcoreapp1.1", false)]
         [InlineData("netcoreapp2.0", false)]
         [InlineData("netcoreapp3.0", true)]
@@ -66,7 +66,7 @@ namespace Microsoft.NET.Publish.Tests
             publishDirectory.Should().OnlyHaveFiles(expectedFiles);
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("netcoreapp1.1", false)]
         [InlineData("netcoreapp2.0", false)]
         [InlineData("netcoreapp3.0", true)]
@@ -111,7 +111,7 @@ namespace Microsoft.NET.Publish.Tests
             publishDirectory.Should().OnlyHaveFiles(expectedFiles);
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("netcoreapp1.1", false)]
         [InlineData("netcoreapp2.0", false)]
         [InlineData("netcoreapp3.0", true)]
@@ -163,7 +163,7 @@ namespace Microsoft.NET.Publish.Tests
             publishDirectory.Should().OnlyHaveFiles(expectedFiles);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void TransitiveNetStandardPackageReferenceAndPublishFalse()
         {
             var testLibraryProject = new TestProject()
@@ -192,7 +192,7 @@ namespace Microsoft.NET.Publish.Tests
             publishCommand.Execute().Should().Pass();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_does_not_exclude_packages_depended_on_by_non_privateassets_references()
         {
             var testProject = new TestProject()

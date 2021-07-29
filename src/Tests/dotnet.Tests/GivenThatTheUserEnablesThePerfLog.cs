@@ -1,5 +1,5 @@
-// Copyright (c) .NET Foundation and contributors. All rights reserved. 
-// Licensed under the MIT license. See LICENSE file in the project root for full license information. 
+//ï¿½Copyrightï¿½(c)ï¿½.NETï¿½Foundationï¿½andï¿½contributors.ï¿½Allï¿½rightsï¿½reserved.ï¿½
+//ï¿½Licensedï¿½underï¿½theï¿½MITï¿½license.ï¿½Seeï¿½LICENSEï¿½fileï¿½inï¿½theï¿½projectï¿½rootï¿½forï¿½fullï¿½licenseï¿½information.ï¿½
 
 using System;
 using System.IO;
@@ -24,7 +24,7 @@ namespace Microsoft.DotNet.Tests
         {
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void WhenPerfLogDisabledDotNetDoesNotWriteToThePerfLog()
         {
             var dir = _testAssetsManager.CreateTestDirectory();
@@ -37,7 +37,7 @@ namespace Microsoft.DotNet.Tests
             Assert.Empty(new DirectoryInfo(dir.Path).GetFiles());
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void WhenPerfLogEnabledDotNetWritesToThePerfLog()
         {
             var dir = _testAssetsManager.CreateTestDirectory();
@@ -56,7 +56,7 @@ namespace Microsoft.DotNet.Tests
             Assert.All(logFiles, f => Assert.NotEqual(0, f.Length));
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void WhenPerfLogEnabledDotNetBuildWritesAPerfLog()
         {
             using (PerfLogTestEventListener listener = new PerfLogTestEventListener())

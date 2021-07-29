@@ -8,12 +8,12 @@ namespace TestNamespace
 {
     public class VSTestXunitTests
     {
-        [Fact]
+        [Fact(Skip="tmp")]
         public void VSTestXunitPassTest()
         {
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void VSTestXunitFailTest()
         {
             Assert.Equal(1, 2);

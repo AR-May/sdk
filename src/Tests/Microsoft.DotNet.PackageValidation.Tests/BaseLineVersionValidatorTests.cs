@@ -17,7 +17,7 @@ namespace Microsoft.DotNet.PackageValidation.Tests
             _log = new TestLogger();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void TfmDroppedInLatestVersion()
         {
             string[] previousFilePaths = new[]

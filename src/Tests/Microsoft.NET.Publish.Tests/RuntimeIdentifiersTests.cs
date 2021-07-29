@@ -82,7 +82,7 @@ namespace Microsoft.NET.Publish.Tests
             }
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void BuildWithUseCurrentRuntimeIdentifier()
         {
             var testProject = new TestProject()
@@ -193,7 +193,7 @@ namespace Microsoft.NET.Publish.Tests
             }
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void DuplicateRuntimeIdentifiers()
         {
             var testProject = new TestProject()

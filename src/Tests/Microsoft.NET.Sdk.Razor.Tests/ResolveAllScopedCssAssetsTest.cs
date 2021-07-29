@@ -11,7 +11,7 @@ namespace Microsoft.NET.Sdk.Razor.Test
 {
     public class ResolveAllScopedCssAssetsTest
     {
-        [Fact]
+        [Fact(Skip="tmp")]
         public void ResolveAllScopedCssAssets_IgnoresRegularCssFiles()
         {
             // Arrange
@@ -39,7 +39,7 @@ namespace Microsoft.NET.Sdk.Razor.Test
             taskInstance.ScopedCssAssets.Should().NotContain(scopedCssAsset => scopedCssAsset.ItemSpec == "site.css");
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void ResolveAllScopedCssAssets_DetectsScopedCssFiles()
         {
             // Arrange
@@ -67,7 +67,7 @@ namespace Microsoft.NET.Sdk.Razor.Test
             taskInstance.ScopedCssAssets.Should().Contain(scopedCssAsset => scopedCssAsset.ItemSpec == "TestFiles/Pages/Counter.razor.rz.scp.css");
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void ResolveAllScopedCssAssets_DetectsScopedCssProjectBundleFiles()
         {
             // Arrange
@@ -95,7 +95,7 @@ namespace Microsoft.NET.Sdk.Razor.Test
             taskInstance.ScopedCssProjectBundles.Should().Contain(scopedCssBundle => scopedCssBundle.ItemSpec == "Folder/Project.bundle.scp.css");
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void ResolveAllScopedCssAssets_IgnoresScopedCssApplicationBundleFiles()
         {
             // Arrange

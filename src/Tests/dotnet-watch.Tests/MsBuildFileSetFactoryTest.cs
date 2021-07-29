@@ -30,7 +30,7 @@ namespace Microsoft.DotNet.Watcher.Tools
             _testAssets = new TestAssetsManager(output);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task FindsCustomWatchItems()
         {
             var project = _testAssets.CreateTestProject(new TestProject("Project1")
@@ -62,7 +62,7 @@ namespace Microsoft.DotNet.Watcher.Tools
             );
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task ExcludesDefaultItemsWithWatchFalseMetadata()
         {
             var project = _testAssets.CreateTestProject(new TestProject("Project1")
@@ -96,7 +96,7 @@ namespace Microsoft.DotNet.Watcher.Tools
             );
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task SingleTfm()
         {
             var project = _testAssets.CreateTestProject(new TestProject("Project1")
@@ -129,7 +129,7 @@ namespace Microsoft.DotNet.Watcher.Tools
             );
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task MultiTfm()
         {
             var project = _testAssets.CreateTestProject(new TestProject("Project1")
@@ -165,7 +165,7 @@ namespace Microsoft.DotNet.Watcher.Tools
             );
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task IncludesContentFiles()
         {
             var testDir = _testAssets.CreateTestDirectory();
@@ -198,7 +198,7 @@ namespace Microsoft.DotNet.Watcher.Tools
             );
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task IncludesContentFilesFromRCL()
         {
             var testDir = _testAssets.CreateTestDirectory();
@@ -242,7 +242,7 @@ namespace Microsoft.DotNet.Watcher.Tools
             );
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task ProjectReferences_OneLevel()
         {
             var project2 = _testAssets.CreateTestProject(new TestProject("Project2")
@@ -271,7 +271,7 @@ namespace Microsoft.DotNet.Watcher.Tools
             );
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task TransitiveProjectReferences_TwoLevels()
         {
             var project3 = _testAssets.CreateTestProject(new TestProject("Project3")

@@ -424,7 +424,7 @@ namespace DefaultReferences
                 .NotHaveStdOutMatching("Encountered conflict", System.Text.RegularExpressions.RegexOptions.CultureInvariant | System.Text.RegularExpressions.RegexOptions.IgnoreCase);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_does_not_report_conflicts_when_with_http_4_1_package()
         {
             if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))

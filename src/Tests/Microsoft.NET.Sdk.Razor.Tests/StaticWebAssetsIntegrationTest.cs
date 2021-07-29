@@ -17,7 +17,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
         public StaticWebAssetsIntegrationTest(ITestOutputHelper log) : base(log, GenerateBaselines) { }
 
         // Build Standalone project
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_GeneratesJsonManifestAndCopiesItToOutputFolder()
         {
             var expectedManifest = LoadBuildManifest();
@@ -45,7 +45,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
             AssertBuildAssets(StaticWebAssetsManifest.FromJsonBytes(File.ReadAllBytes(finalPath)), outputPath, intermediateOutputPath);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_DoesNotUpdateManifest_WhenHasNotChanged()
         {
             var testAsset = "RazorComponentApp";
@@ -92,7 +92,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
             secondFinalFile.LastWriteTimeUtc.Should().Be(originalFile.LastWriteTimeUtc);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_UpdatesManifest_WhenFilesChange()
         {
             var testAsset = "RazorComponentApp";
@@ -161,7 +161,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
 
         // Project with references
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void BuildProjectWithReferences_GeneratesJsonManifestAndCopiesItToOutputFolder()
         {
             var testAsset = "RazorAppWithPackageAndP2PReference";
@@ -194,7 +194,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
         }
 
         // Build no dependencies
-        [Fact]
+        [Fact(Skip="tmp")]
         public void BuildProjectWithReferences_NoDependencies_GeneratesJsonManifestAndCopiesItToOutputFolder()
         {
             var testAsset = "RazorAppWithPackageAndP2PReference";
@@ -250,7 +250,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
         }
 
         // Rebuild
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Rebuild_RegeneratesJsonManifestAndCopiesItToOutputFolder()
         {
             var testAsset = "RazorComponentApp";
@@ -311,7 +311,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
         }
 
         // Publish
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_GeneratesPublishJsonManifestAndCopiesPublishAssets()
         {
             var expectedManifest = LoadBuildManifest();
@@ -346,7 +346,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
                 intermediateOutputPath);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_PublishSingleFile_GeneratesPublishJsonManifestAndCopiesPublishAssets()
         {
             var expectedManifest = LoadBuildManifest();
@@ -382,7 +382,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
                 intermediateOutputPath);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_NoBuild_GeneratesPublishJsonManifestAndCopiesPublishAssets()
         {
             var expectedManifest = LoadBuildManifest();
@@ -480,7 +480,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
             AssertManifest(publishManifest, LoadPublishManifest());
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void PublishProjectWithReferences_GeneratesPublishJsonManifestAndCopiesPublishAssets()
         {
             var testAsset = "RazorAppWithPackageAndP2PReference";
@@ -520,7 +520,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
                 intermediateOutputPath);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void PublishProjectWithReferences_PublishSingleFile_GeneratesPublishJsonManifestAndCopiesPublishAssets()
         {
             var testAsset = "RazorAppWithPackageAndP2PReference";
@@ -555,7 +555,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
                 intermediateOutputPath);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void PublishProjectWithReferences_NoBuild_GeneratesPublishJsonManifestAndCopiesPublishAssets()
         {
             var testAsset = "RazorAppWithPackageAndP2PReference";
@@ -664,7 +664,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
         // Pack
 
         // Clean
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Clean_RemovesManifestFrom_BuildAndIntermediateOutput()
         {
             var expectedManifest = LoadBuildManifest();

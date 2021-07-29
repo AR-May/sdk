@@ -19,7 +19,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
     {
         public ScopedCssIntegrationTest(ITestOutputHelper log) : base(log) { }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_NoOps_WhenScopedCssIsDisabled()
         {
             var testAsset = "RazorComponentApp";
@@ -36,7 +36,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
             new FileInfo(Path.Combine(intermediateOutputPath, "scopedcss", "Components", "Pages", "FetchData.razor.rz.scp.css")).Should().NotExist();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_NoOps_ForMvcApp_WhenScopedCssIsDisabled()
         {
             var testAsset = "RazorSimpleMvc";
@@ -53,7 +53,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
             new FileInfo(Path.Combine(intermediateOutputPath, "scopedcss", "Views", "Home", "About.cshtml.rz.scp.css")).Should().NotExist();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void CanDisableDefaultDiscoveryConvention()
         {
             var testAsset = "RazorComponentApp";
@@ -105,7 +105,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
             new FileInfo(Path.Combine(intermediateOutputPath, "scopedcss", "Components", "Pages", "Index.razor.rz.scp.css")).Should().NotExist();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_GeneratesTransformedFilesAndBundle_ForComponentsWithScopedCss()
         {
             var testAsset = "RazorComponentApp";
@@ -123,7 +123,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
             new FileInfo(Path.Combine(intermediateOutputPath, "scopedcss", "Components", "Pages", "FetchData.razor.rz.scp.css")).Should().NotExist();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_GeneratesTransformedFilesAndBundle_ForViewsWithScopedCss()
         {
             var testAsset = "RazorSimpleMvc";
@@ -141,7 +141,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
             new FileInfo(Path.Combine(intermediateOutputPath, "scopedcss", "Views", "Home", "About.cshtml.rz.scp.css")).Should().Exist();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_ScopedCssFiles_ContainsUniqueScopesPerFile()
         {
             var testAsset = "RazorComponentApp";
@@ -170,7 +170,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
             Assert.NotEqual(counterScopeId, indexScopeId);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_ScopedCssViews_ContainsUniqueScopesPerView()
         {
             var testAsset = "RazorSimpleMvc";
@@ -208,7 +208,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
             Assert.NotEqual(aboutScopeId, contactScopeId);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_WorksWhenViewsAndComponentsArePartOfTheSameProject_ContainsUniqueScopesPerFile()
         {
             var testAsset = "RazorMvcWithComponents";
@@ -239,7 +239,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
             Assert.NotEqual(indexScopeId, counterScopeId);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_PublishesBundleToTheRightLocation()
         {
             var testAsset = "RazorComponentApp";
@@ -255,7 +255,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
             new FileInfo(Path.Combine(publishOutputPath, "wwwroot", "_content", "ComponentApp", "Components", "Pages", "Counter.razor.rz.scp.css")).Should().NotExist();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_NoBuild_PublishesBundleToTheRightLocation()
         {
             var testAsset = "RazorComponentApp";
@@ -276,7 +276,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
             new FileInfo(Path.Combine(publishOutputPath, "wwwroot", "_content", "ComponentApp", "Components", "Pages", "Counter.razor.rz.scp.css")).Should().NotExist();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_DoesNotPublishAnyFile_WhenThereAreNoScopedCssFiles()
         {
             var testAsset = "RazorComponentApp";
@@ -293,7 +293,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
             new FileInfo(Path.Combine(publishOutputPath, "wwwroot", "_content", "ComponentApp", "_framework", "scoped.styles.css")).Should().NotExist();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Publish_Publishes_IndividualScopedCssFiles_WhenNoBundlingIsEnabled()
         {
             var testAsset = "RazorComponentApp";
@@ -348,7 +348,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
             Assert.NotEqual(bundleThumbprint, newBundleThumbprint);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Does_Nothing_WhenThereAreNoScopedCssFiles()
         {
             var testAsset = "RazorComponentApp";
@@ -367,7 +367,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
             new FileInfo(Path.Combine(intermediateOutputPath, "scopedcss", "_framework", "scoped.styles.css")).Should().NotExist();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_ScopedCssTransformation_AndBundling_IsIncremental()
         {
             // Arrange

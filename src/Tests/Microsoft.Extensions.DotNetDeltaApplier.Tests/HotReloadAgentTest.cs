@@ -12,7 +12,7 @@ namespace Microsoft.Extensions.DotNetDeltaApplier
 {
     public class HotReloadAgentTest
     {
-        [Fact]
+        [Fact(Skip="tmp")]
         public void TopologicalSort_Works()
         {
             // Arrange
@@ -27,7 +27,7 @@ namespace Microsoft.Extensions.DotNetDeltaApplier
             Assert.Equal(new[] { assembly1, assembly2, assembly3, assembly4 }, sortedList);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void TopologicalSort_IgnoresUnknownReferencedAssemblies()
         {
             // Arrange
@@ -42,7 +42,7 @@ namespace Microsoft.Extensions.DotNetDeltaApplier
             Assert.Equal(new[] { assembly1, assembly2, assembly3, assembly4 }, sortedList);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void TopologicalSort_WithCycles()
         {
             // Arrange
@@ -58,7 +58,7 @@ namespace Microsoft.Extensions.DotNetDeltaApplier
             Assert.Equal(new[] { assembly1, assembly3, assembly2, assembly4, assembly5 }, sortedList);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GetHandlerActions_DiscoversActionsOnTypeWithClearCache()
         {
             // Arrange
@@ -73,7 +73,7 @@ namespace Microsoft.Extensions.DotNetDeltaApplier
             Assert.Empty(actions.UpdateApplication);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GetHandlerActions_DiscoversActionsOnTypeWithUpdateApplication()
         {
             // Arrange
@@ -88,7 +88,7 @@ namespace Microsoft.Extensions.DotNetDeltaApplier
             Assert.Single(actions.UpdateApplication);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GetHandlerActions_DiscoversActionsOnTypeWithBothActions()
         {
             // Arrange
@@ -103,7 +103,7 @@ namespace Microsoft.Extensions.DotNetDeltaApplier
             Assert.Single(actions.UpdateApplication);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GetHandlerActions_LogsMessageIfMethodHasIncorrectSignature()
         {
             // Arrange
@@ -120,7 +120,7 @@ namespace Microsoft.Extensions.DotNetDeltaApplier
             Assert.Single(actions.UpdateApplication);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GetHandlerActions_LogsMessageIfNoActionsAreDiscovered()
         {
             // Arrange

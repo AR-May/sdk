@@ -13,7 +13,7 @@ namespace Microsoft.DotNet.Watcher.Tools
 {
     public class StaticFileHandlerTest
     {
-        [Fact]
+        [Fact(Skip="tmp")]
         public async ValueTask TryHandleFileAction_WritesUpdateCssMessage()
         {
             // Arrange
@@ -42,7 +42,7 @@ namespace Microsoft.DotNet.Watcher.Tools
             Assert.Equal("content/Test.css", deserialized.Path);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async ValueTask TryHandleFileAction_CausesBrowserRefreshForNonCssFile()
         {
             // Arrange

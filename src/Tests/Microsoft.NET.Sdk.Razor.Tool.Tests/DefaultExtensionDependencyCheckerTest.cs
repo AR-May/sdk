@@ -15,7 +15,7 @@ namespace Microsoft.NET.Sdk.Razor.Tool.Tests
     {
         public DefaultExtensionDependencyCheckerTest(ITestOutputHelper log) : base(log) {}
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Check_ReturnsFalse_WithMissingDependency()
         {
             // Arrange
@@ -34,7 +34,7 @@ namespace Microsoft.NET.Sdk.Razor.Tool.Tests
             Assert.False(result, "Check should not have passed: " + output.ToString());
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Check_ReturnsTrue_WithAllDependenciesProvided()
         {
             // Arrange
@@ -57,7 +57,7 @@ namespace Microsoft.NET.Sdk.Razor.Tool.Tests
             
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Check_ReturnsFalse_WhenAssemblyHasDifferentMVID()
         {
             // Arrange
@@ -84,7 +84,7 @@ namespace Microsoft.NET.Sdk.Razor.Tool.Tests
             Assert.False(result, "Check should not have passed: " + output.ToString());
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Check_ReturnsFalse_WhenLoaderThrows()
         {
             // Arrange

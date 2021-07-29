@@ -112,7 +112,7 @@ namespace Microsoft.NET.Publish.Tests
             TestProjectPublishing_Internal("FrameworkDependent", targetFramework, isSelfContained: false, emitNativeSymbols:true, identifier: targetFramework);
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("netcoreapp3.0")]
         [InlineData("net5.0")]
         [InlineData("net6.0")]
@@ -168,7 +168,7 @@ namespace Microsoft.NET.Publish.Tests
                 .And.HaveStdOutContainingIgnoreCase("NETSDK1095");
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_warns_when_targetting_netcoreapp_2_x_readytorun()
         {
             var testProject = new TestProject()

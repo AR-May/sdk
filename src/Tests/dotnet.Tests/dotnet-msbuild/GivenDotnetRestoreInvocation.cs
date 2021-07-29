@@ -17,7 +17,7 @@ namespace Microsoft.DotNet.Cli.MSBuild.Tests
         private static readonly string WorkingDirectory = 
             TestPathUtilities.FormatAbsolutePath(nameof(GivenDotnetRestoreInvocation));
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData(new string[] { }, "")]
         [InlineData(new string[] { "-s", "<source>" }, "-property:RestoreSources=<source>")]
         [InlineData(new string[] { "--source", "<source>" }, "-property:RestoreSources=<source>")]

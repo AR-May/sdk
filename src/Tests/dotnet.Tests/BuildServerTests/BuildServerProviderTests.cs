@@ -28,7 +28,7 @@ namespace Microsoft.DotNet.Tests.BuildServerTests
 
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GivenMSBuildFlagItYieldsMSBuild()
         {
             var provider = new BuildServerProvider(
@@ -42,7 +42,7 @@ namespace Microsoft.DotNet.Tests.BuildServerTests
                 .Equal(LocalizableStrings.MSBuildServer);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GivenVBCSCompilerFlagItYieldsVBCSCompiler()
         {
             var provider = new BuildServerProvider(
@@ -56,7 +56,7 @@ namespace Microsoft.DotNet.Tests.BuildServerTests
                 .Equal(LocalizableStrings.VBCSCompilerServer);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GivenRazorFlagAndNoPidDirectoryTheEnumerationIsEmpty()
         {
             var provider = new BuildServerProvider(
@@ -69,7 +69,7 @@ namespace Microsoft.DotNet.Tests.BuildServerTests
                 .BeEmpty();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GivenNoEnvironmentVariableItUsesTheDefaultPidDirectory()
         {
             var provider = new BuildServerProvider(
@@ -86,7 +86,7 @@ namespace Microsoft.DotNet.Tests.BuildServerTests
                     "build"));
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GivenEnvironmentVariableItUsesItForThePidDirectory()
         {
             IFileSystem fileSystem = new FileSystemMockBuilder().UseCurrentSystemTemporaryDirectory().Build();
@@ -102,7 +102,7 @@ namespace Microsoft.DotNet.Tests.BuildServerTests
                 .Be(pidDirectory);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GivenARazorPidFileItReturnsARazorBuildServer()
         {
             const int ProcessId = 1234;
@@ -141,7 +141,7 @@ namespace Microsoft.DotNet.Tests.BuildServerTests
             razorServer.PidFile.PipeName.Should().Be(PipeName);
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData(typeof(UnauthorizedAccessException))]
         [InlineData(typeof(IOException))]
         public void GivenAnExceptionAccessingTheRazorPidFileItPrintsAWarning(Type exceptionType)

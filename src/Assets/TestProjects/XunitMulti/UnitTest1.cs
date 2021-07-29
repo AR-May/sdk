@@ -8,24 +8,24 @@ namespace TestNamespace
 {
     public class VSTestXunitTests
     {
-        [Fact]
+        [Fact(Skip="tmp")]
         public void VSTestXunitPassTest()
         {
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void VSTestXunitFailTest()
         {
             Assert.Equal(1, 2);
         }
 
 #if DESKTOP
-        [Fact]
+        [Fact(Skip="tmp")]
         public void VSTestXunitPassTestDesktop()
         {
         }
 #else
-        [Fact]
+        [Fact(Skip="tmp")]
         public void VSTestXunitFailTestNetCoreApp()
         {
             Assert.Equal(1, 2);

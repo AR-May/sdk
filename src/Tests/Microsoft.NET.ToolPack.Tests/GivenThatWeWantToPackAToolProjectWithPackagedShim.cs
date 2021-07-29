@@ -81,7 +81,7 @@ namespace Microsoft.NET.ToolPack.Tests
                 .WithTargetFrameworkOrFrameworks(targetFramework, multiTarget);
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData(true, "netcoreapp2.1")]
         [InlineData(false, "netcoreapp2.1")]
         [InlineData(true, "netcoreapp3.0")]
@@ -97,7 +97,7 @@ namespace Microsoft.NET.ToolPack.Tests
             }
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData(true, "netcoreapp2.1")]
         [InlineData(false, "netcoreapp2.1")]
         [InlineData(true, "netcoreapp3.0")]
@@ -118,7 +118,7 @@ namespace Microsoft.NET.ToolPack.Tests
             }
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData(true, "netcoreapp2.1")]
         [InlineData(false, "netcoreapp2.1")]
         [InlineData(true, "netcoreapp3.0")]
@@ -142,7 +142,7 @@ namespace Microsoft.NET.ToolPack.Tests
             }
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData(true, "netcoreapp2.1")]
         [InlineData(false, "netcoreapp2.1")]
         [InlineData(true, "netcoreapp3.0")]
@@ -175,7 +175,7 @@ namespace Microsoft.NET.ToolPack.Tests
             File.Exists(osxShimPath).Should().BeTrue($"Shim {osxShimPath} should exist");
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData(true, "netcoreapp2.1")]
         [InlineData(false, "netcoreapp2.1")]
         [InlineData(true, "netcoreapp3.0")]
@@ -201,7 +201,7 @@ namespace Microsoft.NET.ToolPack.Tests
             File.Exists(osxShimPath).Should().BeTrue($"Shim {osxShimPath} should exist");
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData(true, "netcoreapp2.1")]
         [InlineData(false, "netcoreapp2.1")]
         [InlineData(true, "netcoreapp3.0")]
@@ -230,7 +230,7 @@ namespace Microsoft.NET.ToolPack.Tests
             File.Exists(osxShimPath).Should().BeFalse($"Shim {osxShimPath} should not exists");
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData(true, "netcoreapp2.1")]
         [InlineData(false, "netcoreapp2.1")]
         [InlineData(true, "netcoreapp3.0")]
@@ -261,7 +261,7 @@ namespace Microsoft.NET.ToolPack.Tests
             windowShimPathSecondModifiedTime.Should().Be(windowShimPathFirstModifiedTime);
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData(true, "netcoreapp2.1")]
         [InlineData(false, "netcoreapp2.1")]
         [InlineData(true, "netcoreapp3.0")]

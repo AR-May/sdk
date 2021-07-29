@@ -369,7 +369,7 @@ public static class {project.Name}
                 .Should().Be(correctHttpReference);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_tolerates_newline_in_hint_path()
         {
             string hintPath = BuildReferencedBuildAndReturnOutputDllPath();

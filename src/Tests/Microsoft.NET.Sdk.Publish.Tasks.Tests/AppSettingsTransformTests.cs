@@ -9,7 +9,7 @@ namespace Microsoft.NET.Sdk.Publish.Tasks.Tests
 {
     public class AppSettingsTransformTests
     {
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GenerateDefaultAppSettingsJsonFile_CreatesCorrectDefaultFile()
         {
             // Act 
@@ -22,7 +22,7 @@ namespace Microsoft.NET.Sdk.Publish.Tasks.Tests
         }
 
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("DefaultConnection", @"Server=(localdb)\mssqllocaldb;Database=defaultDB;Trusted_Connection=True;MultipleActiveResultSets=true")]
         [InlineData("EmptyConnection", @"")]
         [InlineData("", @"SomeConnectionStringValue")]
@@ -49,7 +49,7 @@ namespace Microsoft.NET.Sdk.Publish.Tasks.Tests
             }
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("DefaultConnection", @"Server=(localdb)\mssqllocaldb;Database=defaultDB;Trusted_Connection=True;MultipleActiveResultSets=true")]
         [InlineData("EmptyConnection", @"")]
         [InlineData("", @"SomeConnectionStringValue")]
@@ -91,7 +91,7 @@ namespace Microsoft.NET.Sdk.Publish.Tasks.Tests
             get { return testData; }
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [MemberData(nameof(ConnectionStringsData), MemberType=typeof(AppSettingsTransformTests))]
         public void AppSettingsTransform_UpdatesMultipleConnectionStrings(ITaskItem[] values)
         {
@@ -114,7 +114,7 @@ namespace Microsoft.NET.Sdk.Publish.Tasks.Tests
             }
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("DefaultConnection", @"Server=(localdb)\mssqllocaldb;Database=defaultDB;Trusted_Connection=True;MultipleActiveResultSets=true")]
         [InlineData("EmptyConnection", @"")]
         [InlineData("", @"SomeConnectionStringValue")]

@@ -30,7 +30,7 @@ namespace Microsoft.NET.Publish.Tests
             "WindowsBase.dll",
         };
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData(true, false)]
         [InlineData(true, true)]
         [InlineData(false, false)]

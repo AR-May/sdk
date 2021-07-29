@@ -33,7 +33,7 @@ namespace Microsoft.NET.Build.Tests
                 .HaveStdOutContaining("NETSDK1134");
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_succeeds_with_project_level_RID()
         {
             var testAsset = _testAssetsManager
@@ -54,7 +54,7 @@ namespace Microsoft.NET.Build.Tests
                 .Pass();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_fails_with_unsupported_RID()
         {
             var testProject = new TestProject()

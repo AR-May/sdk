@@ -11,7 +11,7 @@ namespace Microsoft.DotNet.ApiCompatibility.Tests
 {
     public class CustomSideNameTests
     {
-        [Fact]
+        [Fact(Skip="tmp")]
         public void CustomSideNameAreNotSpecified()
         {
             string leftSyntax = @"
@@ -41,7 +41,7 @@ namespace CompatTests
             AssertNames(differences.First(), expectedLeftName, expectedRightName);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void CustomSideNamesAreUsed()
         {
             string leftSyntax = @"
@@ -78,7 +78,7 @@ namespace CompatTests
             AssertNames(differences.First(), expectedLeftName, expectedRightName);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void CustomSideNamesAreUsedStrictMode()
         {
             string leftSyntax = @"
@@ -111,7 +111,7 @@ namespace CompatTests
             AssertNames(differences.First(), expectedLeftName, expectedRightName, leftFirst: false);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void MultipleRightsMetadataInformationIsUsedAsName()
         {
             string leftSyntax = @"

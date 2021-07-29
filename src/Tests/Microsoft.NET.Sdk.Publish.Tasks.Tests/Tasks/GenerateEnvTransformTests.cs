@@ -31,7 +31,7 @@ namespace Microsoft.NET.Sdk.Publish.Tasks.Tests.Tasks
         </system.webServer>
 </configuration>");
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData(null, null)]
         [InlineData("", null)]
         public void GetEnvironmentVariables_HandlesNullAndEmpty(string value, object expected)
@@ -46,7 +46,7 @@ namespace Microsoft.NET.Sdk.Publish.Tasks.Tests.Tasks
             Assert.Equal(expected, envVariables);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void GenerateEnvTransformDocument_HandlesNullAndEmpty()
         {
             // Arrange
@@ -59,7 +59,7 @@ namespace Microsoft.NET.Sdk.Publish.Tasks.Tests.Tasks
             Assert.Null(transformDoc);
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData(null, true)]
         [InlineData("", true)]
         public void Execute_DoesnotFail_IfEnvVarIsNullOrEmpty(string envVariable, bool expected)
@@ -78,7 +78,7 @@ namespace Microsoft.NET.Sdk.Publish.Tasks.Tests.Tasks
 
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("envname=envvalue", 1)]
         [InlineData("envname=envvalue;envname2=envvalue2", 2)]
         [InlineData("envname=", 1)]
@@ -100,7 +100,7 @@ namespace Microsoft.NET.Sdk.Publish.Tasks.Tests.Tasks
             Assert.Equal(expectedCount, envVariables.Count);
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("envname=envvalue", 1)]
         [InlineData("envname=envvalue;envname2=envvalue2", 2)]
         [InlineData("envname=", 1)]
@@ -127,7 +127,7 @@ namespace Microsoft.NET.Sdk.Publish.Tasks.Tests.Tasks
 
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("envname=envvalue", 1)]
         [InlineData("envname=envvalue;envname2=envvalue2", 2)]
         [InlineData("envname=", 1)]
@@ -193,7 +193,7 @@ namespace Microsoft.NET.Sdk.Publish.Tasks.Tests.Tasks
             }
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("envname=envvalue", 1)]
         [InlineData("envname=envvalue;envname2=envvalue2", 2)]
         [InlineData("envname=", 1)]
@@ -254,7 +254,7 @@ namespace Microsoft.NET.Sdk.Publish.Tasks.Tests.Tasks
             }
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("envname=envvalue", 1)]
         [InlineData("envname=envvalue;envname2=envvalue2", 2)]
         [InlineData("envname=", 1)]

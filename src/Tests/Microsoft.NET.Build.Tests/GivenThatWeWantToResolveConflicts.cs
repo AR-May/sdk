@@ -22,7 +22,7 @@ namespace Microsoft.NET.Build.Tests
         {
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("netcoreapp2.0")]
         [InlineData("netstandard2.0")]
         public void The_same_references_are_used_with_or_without_DisableDefaultPackageConflictOverrides(string targetFramework)
@@ -104,7 +104,7 @@ namespace Microsoft.NET.Build.Tests
             referenceCopyLocalPaths = getReferenceCopyLocalPathsCommand.GetValues();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void CompileConflictsAreNotRemovedFromRuntimeDepsAssets()
         {
             TestProject testProject = new TestProject()
@@ -139,7 +139,7 @@ namespace Microsoft.NET.Build.Tests
 
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void AProjectCanReferenceADllInAPackageDirectly()
         {
             TestProject testProject = new TestProject()
@@ -170,7 +170,7 @@ namespace Microsoft.NET.Build.Tests
                 .Pass();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void DuplicateFrameworkAssembly()
         {
             TestProject testProject = new TestProject()
@@ -193,7 +193,7 @@ namespace Microsoft.NET.Build.Tests
                 .Pass();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void FilesFromAspNetCoreSharedFrameworkAreNotIncluded()
         {
             var testProject = new TestProject()
@@ -227,7 +227,7 @@ namespace Microsoft.NET.Build.Tests
             outputDirectory.Should().NotHaveFile("Microsoft.Extensions.DependencyInjection.Abstractions.dll");
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void AnalyzersAreConflictResolved()
         {
             var testProject = new TestProject()

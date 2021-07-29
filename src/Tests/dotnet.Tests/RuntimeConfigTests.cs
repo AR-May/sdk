@@ -19,7 +19,7 @@ namespace Microsoft.DotNet.Tests
         {
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         void ParseBasicRuntimeConfig()
         {
             var tempPath = GetTempPath();
@@ -28,7 +28,7 @@ namespace Microsoft.DotNet.Tests
             Asset(runtimeConfig);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         void ParseRuntimeConfigWithTrailingComma()
         {
             var tempPath = GetTempPath();
@@ -37,7 +37,7 @@ namespace Microsoft.DotNet.Tests
             Asset(runtimeConfig);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         void ParseRuntimeConfigWithComment()
         {
             var tempPath = GetTempPath();
@@ -46,7 +46,7 @@ namespace Microsoft.DotNet.Tests
             Asset(runtimeConfig);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         void ParseRuntimeConfigWithDifferentOrder()
         {
             var tempPath = GetTempPath();
@@ -55,7 +55,7 @@ namespace Microsoft.DotNet.Tests
             Asset(runtimeConfig);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         void ParseRuntimeConfigWithDifferentCasingOnNameAndVersionField()
         {
             var tempPath = GetTempPath();
@@ -64,7 +64,7 @@ namespace Microsoft.DotNet.Tests
             Asset(runtimeConfig);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         void ParseRuntimeConfigWithDifferentCasingOnFrameworkField()
         {
             var tempPath = GetTempPath();
@@ -73,7 +73,7 @@ namespace Microsoft.DotNet.Tests
             runtimeConfig.Framework.Should().BeNull();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         void ParseRuntimeConfigWithDifferentCasingOnRuntimeOptionsField()
         {
             var tempPath = GetTempPath();
@@ -82,7 +82,7 @@ namespace Microsoft.DotNet.Tests
             runtimeConfig.Framework.Should().BeNull();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         void ParseRuntimeConfigWithEmpty()
         {
             var tempPath = GetTempPath();
@@ -91,7 +91,7 @@ namespace Microsoft.DotNet.Tests
             a.ShouldThrow<System.Text.Json.JsonException>();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         void ParseRuntimeConfigWithDifferentWithExtraField()
         {
             var tempPath = GetTempPath();
@@ -100,7 +100,7 @@ namespace Microsoft.DotNet.Tests
             Asset(runtimeConfig);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         void ParseRuntimeConfigWithDifferentWithNoFramework()
         {
             var tempPath = GetTempPath();
@@ -110,7 +110,7 @@ namespace Microsoft.DotNet.Tests
             runtimeConfig.IsPortable.Should().BeFalse();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         void ParseRuntimeConfigWithDifferentWithMissingField()
         {
             var tempPath = GetTempPath();

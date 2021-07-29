@@ -23,7 +23,7 @@ namespace Microsoft.NET.ToolPack.Tests
         public GivenThatWeWantToBuildWithGeneratePackageOnBuildAndPackAsTool(ITestOutputHelper log) : base(log)
         {}
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData(false, false)]
         [InlineData(false, true)]
         [InlineData(true, false)]

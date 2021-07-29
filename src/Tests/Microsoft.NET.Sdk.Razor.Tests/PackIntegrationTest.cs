@@ -24,7 +24,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
 
         public PackIntegrationTest(ITestOutputHelper log) : base(log) {}
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Pack_NoBuild_Works_IncludesAssembly()
         {
             var testAsset = "RazorClassLibrary";
@@ -67,7 +67,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
                 Path.Combine("lib", DefaultTfm, "ClassLibrary.dll"));
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Pack_FailsWhenStaticWebAssetsHaveConflictingPaths()
         {
             var testAsset = "PackageLibraryDirectDependency";
@@ -94,7 +94,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
         }
 
         // If you modify this test, make sure you also modify the test below this one to assert that things are not included as content.
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Pack_IncludesStaticWebAssets()
         {
             var testAsset = "PackageLibraryDirectDependency";
@@ -124,7 +124,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
                 });
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Pack_DoesNotInclude_TransitiveBundleOrScopedCssAsStaticWebAsset()
         {
             var testAsset = "PackageLibraryDirectDependency";
@@ -150,7 +150,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
                 });
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Pack_DoesNotIncludeStaticWebAssetsAsContent()
         {
             var testAsset = "PackageLibraryDirectDependency";
@@ -182,7 +182,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
                 });
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Pack_NoBuild_IncludesStaticWebAssets()
         {
             var testAsset = "PackageLibraryDirectDependency";
@@ -213,7 +213,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
                 });
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Pack_DoesNotIncludeAnyCustomPropsFiles_WhenNoStaticAssetsAreAvailable()
         {
             var testAsset = "RazorComponentLibrary";
@@ -237,7 +237,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
                 });
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Pack_Incremental_DoesNotRegenerateCacheAndPropsFiles()
         {
             var testAsset = "PackageLibraryTransitiveDependency";

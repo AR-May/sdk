@@ -21,7 +21,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
     {
         public WasmBuildIntegrationTest(ITestOutputHelper log) : base(log, true) {}
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void BuildMinimal_Works()
         {
             // Arrange
@@ -50,7 +50,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             //staticWebAssets.Should().Contain(Path.Combine(DefaultTfm, "scopedcss"));
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_Works()
         {
             // Arrange
@@ -83,7 +83,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             //staticWebAssets.Should().Contain(Path.Combine(testInstance.TestRoot, "razorclasslibrary", "wwwroot"));
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_InRelease_Works()
         {
             // Arrange
@@ -116,7 +116,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             //staticWebAssets.Should().Contain(Path.Combine(testInstance.TestRoot, "razorclasslibrary", "wwwroot"));
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_ProducesBootJsonDataWithExpectedContent()
         {
             // Arrange
@@ -155,7 +155,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             bootJsonData.config.Should().Contain("appsettings.development.json");
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_InRelease_ProducesBootJsonDataWithExpectedContent()
         {
             // Arrange
@@ -191,7 +191,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             bootJsonData.resources.satelliteResources.Should().BeNull();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_WithBlazorEnableTimeZoneSupportDisabled_DoesNotCopyTimeZoneInfo()
         {
             // Arrange
@@ -224,7 +224,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             new FileInfo(Path.Combine(buildOutputDirectory, "wwwroot", "_framework", "dotnet.timezones.blat")).Should().NotExist();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_WithInvariantGlobalizationEnabled_DoesNotCopyGlobalizationData()
         {
             // Arrange
@@ -263,7 +263,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             new FileInfo(Path.Combine(buildOutputDirectory, "wwwroot", "_framework", "icudt_no_CJK.dat")).Should().NotExist();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_WithBlazorWebAssemblyLoadAllGlobalizationData_SetsICUDataMode()
         {
             // Arrange
@@ -302,7 +302,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             new FileInfo(Path.Combine(buildOutputDirectory, "wwwroot", "_framework", "icudt_no_CJK.dat")).Should().Exist();
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_Hosted_Works()
         {
             // Arrange
@@ -323,7 +323,7 @@ namespace Microsoft.NET.Sdk.BlazorWebAssembly.Tests
             //staticWebAssets.Should().Contain(Path.Combine("blazorwasm", "wwwroot"));
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void Build_SatelliteAssembliesAreCopiedToBuildOutput()
         {
             // Arrange

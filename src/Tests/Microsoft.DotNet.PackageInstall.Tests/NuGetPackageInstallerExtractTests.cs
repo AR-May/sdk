@@ -23,7 +23,7 @@ namespace Microsoft.DotNet.PackageInstall.Tests
         {
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task ItCanExtractNugetPackage()
         {
             string packageId = "Newtonsoft.Json";

@@ -22,7 +22,7 @@ namespace Microsoft.DotNet.Watcher.Tools
             _logger = logger;
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task LaunchesBrowserOnStart()
         {
             var expected = "watch : Launching browser: https://localhost:5001/";
@@ -40,7 +40,7 @@ namespace Microsoft.DotNet.Watcher.Tools
             await app.Process.GetOutputLineStartsWithAsync(expected, TimeSpan.FromMinutes(2));
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task UsesBrowserSpecifiedInEnvironment()
         {
             var launchBrowserMessage = "watch : Launching browser: mycustombrowser.bat https://localhost:5001/";

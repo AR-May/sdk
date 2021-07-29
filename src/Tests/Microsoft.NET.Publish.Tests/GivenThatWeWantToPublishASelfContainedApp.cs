@@ -24,7 +24,7 @@ namespace Microsoft.NET.Publish.Tests
         {
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_errors_when_publishing_self_contained_app_without_rid()
         {
              var testAsset = _testAssetsManager
@@ -42,7 +42,7 @@ namespace Microsoft.NET.Publish.Tests
                 .HaveStdOutContaining(Strings.CannotHaveSelfContainedWithoutRuntimeIdentifier);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_errors_when_publishing_self_contained_without_apphost()
         {
             var runtimeIdentifier = RuntimeInformation.RuntimeIdentifier;
@@ -65,7 +65,7 @@ namespace Microsoft.NET.Publish.Tests
         }
 
         // repro https://github.com/dotnet/sdk/issues/2466
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_does_not_fail_publishing_a_self_twice()
         {
             var runtimeIdentifier = RuntimeInformation.RuntimeIdentifier;
@@ -129,7 +129,7 @@ namespace Microsoft.NET.Publish.Tests
                 .Be(2);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_publishes_an_app_with_a_netcoreapp_lib_reference()
         {
             var testAsset = _testAssetsManager

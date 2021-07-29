@@ -221,7 +221,7 @@ namespace Microsoft.NET.Build.Tests
             getValuesCommand.GetValues().Should().BeEquivalentTo(new[] { "10.0.18362.0" });
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_fails_if_target_platform_identifier_and_version_are_invalid()
         {
             var testProject = new TestProject()

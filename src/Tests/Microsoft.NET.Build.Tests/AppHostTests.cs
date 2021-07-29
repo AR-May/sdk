@@ -53,7 +53,7 @@ namespace Microsoft.NET.Build.Tests
         {
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("netcoreapp3.1")]
         [InlineData("net5.0")]
         [InlineData("net6.0")]
@@ -234,7 +234,7 @@ namespace Microsoft.NET.Build.Tests
                 .HaveStdErrContaining($"{appHostFullPath}: is already signed");
         }
 
-        [Theory]
+        [Theory(Skip="tmp")]
         [InlineData("netcoreapp2.1")]
         [InlineData("netcoreapp2.2")]
         public void It_does_not_build_with_an_apphost_by_default_before_netcoreapp_3(string targetFramework)
@@ -363,7 +363,7 @@ namespace Microsoft.NET.Build.Tests
             });
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void If_UseAppHost_is_false_it_does_not_try_to_find_an_AppHost()
         {
             var testProject = new TestProject()
@@ -387,7 +387,7 @@ namespace Microsoft.NET.Build.Tests
 
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_retries_on_failure_to_create_apphost()
         {
             const string TFM = "net5.0";

@@ -21,7 +21,7 @@ namespace Microsoft.NET.Build.Tests
         {
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void NonCopyLocalProjectReferenceDoesNotGoToDeps()
         {
             var targetFramework = "netcoreapp3.0";

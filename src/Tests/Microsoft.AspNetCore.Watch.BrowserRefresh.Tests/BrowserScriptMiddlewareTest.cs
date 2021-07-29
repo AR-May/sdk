@@ -14,7 +14,7 @@ namespace Microsoft.AspNetCore.Watch.BrowserRefresh
     {
         private readonly RequestDelegate _next = (context) => Task.CompletedTask;
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task InvokeAsync_ReturnsScript()
         {
             // Arrange
@@ -33,7 +33,7 @@ namespace Microsoft.AspNetCore.Watch.BrowserRefresh
             Assert.Contains("'some-host'", script);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task InvokeAsync_ConfiguresHeaders()
         {
             // Arrange

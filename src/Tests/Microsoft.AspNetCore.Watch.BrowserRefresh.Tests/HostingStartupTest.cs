@@ -13,7 +13,7 @@ namespace Microsoft.AspNetCore.Watch.BrowserRefresh
 {
     public class HostingStartupTest
     {
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task ClearSiteDataWorks()
         {
             // Arrange
@@ -29,7 +29,7 @@ namespace Microsoft.AspNetCore.Watch.BrowserRefresh
             Assert.Equal("\"cache\"", context.Response.Headers["Clear-Site-Data"]);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task GetBlazorHotReloadMiddlewareWorks()
         {
             // Arrange
@@ -46,7 +46,7 @@ namespace Microsoft.AspNetCore.Watch.BrowserRefresh
             Assert.Equal(StatusCodes.Status204NoContent, context.Response.StatusCode);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task PostBlazorHotReloadMiddlewareWorks()
         {
             // Arrange
@@ -63,7 +63,7 @@ namespace Microsoft.AspNetCore.Watch.BrowserRefresh
             Assert.Equal(StatusCodes.Status200OK, context.Response.StatusCode);
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task GetBlazorHotReloadJsWorks()
         {
             // Arrange
@@ -81,7 +81,7 @@ namespace Microsoft.AspNetCore.Watch.BrowserRefresh
             Assert.NotEmpty(responseBody.ToArray());
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task GetAspNetCoreBrowserRefreshWorks()
         {
             // Arrange
@@ -99,7 +99,7 @@ namespace Microsoft.AspNetCore.Watch.BrowserRefresh
             Assert.NotEmpty(responseBody.ToArray());
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public async Task GetUnknownUrlWorks()
         {
             // Arrange

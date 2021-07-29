@@ -19,7 +19,7 @@ namespace Microsoft.NET.Sdk.Razor.Tests
 {
     public class GenerateStaticWebAssetsDevelopmentManifestTest
     {
-        [Fact]
+        [Fact(Skip="tmp")]
         public void ReturnsError_WhenBasePathIsMissing()
         {
             // Arrange

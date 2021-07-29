@@ -24,7 +24,7 @@ namespace Microsoft.NET.Build.Tests
         {
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_builds_the_project_successfully()
         {
             // NOTE the project dependencies in AppWithTransitiveProjectRefs:
@@ -108,7 +108,7 @@ namespace Microsoft.NET.Build.Tests
             outputDirectory.Should().OnlyHaveFiles(Array.Empty<string>());
         }
 
-        [Fact]
+        [Fact(Skip="tmp")]
         public void It_does_not_build_the_project_successfully()
         {
             // NOTE the project dependencies in AppWithTransitiveProjectRefs:

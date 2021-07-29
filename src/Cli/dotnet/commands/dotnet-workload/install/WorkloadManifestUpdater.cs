@@ -134,15 +134,15 @@ namespace Microsoft.DotNet.Workloads.Workload.Install
 
         public static void AdvertiseWorkloadUpdates()
         {
-            try
-            {
+            //try
+            //{
                 var manifestUpdater = WorkloadManifestUpdater.GetInstance();
                 manifestUpdater.AdvertiseWorkloadUpdatesWhenRequired();
-            }
-            catch (Exception)
-            {
-                // Never surface errors
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    // Never surface errors
+            //}
         }
 
         public void AdvertiseWorkloadUpdatesWhenRequired()
@@ -151,6 +151,11 @@ namespace Microsoft.DotNet.Workloads.Workload.Install
             {
                 Console.WriteLine();
                 Console.WriteLine(LocalizableStrings.WorkloadUpdatesAvailable);
+            }
+            else
+            {
+
+                Console.WriteLine("No ad: " + !BackgroundUpdatesAreDisabled() + " " + File.Exists(GetAdvertisingWorkloadsFilePath()) + GetAdvertisingWorkloadsFilePath());
             }
         }
 
